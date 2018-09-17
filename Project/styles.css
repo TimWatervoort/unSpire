@@ -1,0 +1,14 @@
+#name{
+  background-color:grey;
+  border: 3px solid grey;
+}
+
+button {
+  width: 200px;
+}
+
+@media (max-width: 600px){
+  cho {
+    display: block;
+  }
+}
