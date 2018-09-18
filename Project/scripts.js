@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let original = [adverbs[advInd], verbs[verInd], adjectives[adj1Ind], nouns[nouInd]];
     let num = Math.floor(Math.random() * 2);
     if (num === 0) {
-      nickname = `${capitalize(original[0])} ${capitalize(original[1])}`
+      nickname = `${capitalize(original[1])} ${capitalize(original[0])}`
     } else {
       nickname = `${capitalize(original[2])} ${capitalize(original[3])}`
     }

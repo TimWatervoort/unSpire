@@ -3,7 +3,7 @@ var adverbs = new Array(
   'continually', 'conveniently', 'credibly', 'distinctively', 'dramatically', 'dynamically', 'efficiently',
   'energistically', 'enthusiastically', 'globally', 'holisticly', 'interactively', 'intrinsically', 'monotonectally',
   'objectively', 'phosfluorescently', 'proactively', 'professionally', 'progressively', 'quickly', 'rapidiously',
-  'seamlessly', 'synergistically', 'uniquely', 'fungibly'
+  'seamlessly', 'synergistically', 'uniquely', 'fungibly', 'uncontrollably', 'quickly', 'unfortunately', 'badly', 'with gusto', 'with your friends', 'with my friends', 'with Putin', 'without you', 'at the gym', 'around your parents', 'alone', 'at home'
 );
 
 var verbs = new Array(
@@ -11,13 +11,12 @@ var verbs = new Array(
   'coordinate', 'create', 'cultivate', 'customize', 'deliver', 'deploy', 'develop', 'disintermediate', 'disseminate',
   'drive', 'embrace', 'e-enable', 'empower', 'enable', 'engage', 'engineer', 'enhance', 'envisioneer', 'evisculate',
   'evolve', 'expedite', 'exploit', 'extend', 'fabricate', 'facilitate', 'fashion', 'formulate', 'foster', 'generate',
-  'grow', 'harness', 'impact', 'implement', 'incentivize', 'incubate', 'initiate', 'innovate', 'integrate', 'iterate',
-  'leverage existing', 'leverage other\'s', 'maintain', 'matrix', 'maximize', 'mesh', 'monetize', 'morph', 'myocardinate',
+  'grow', 'harness', 'impact', 'implement', 'incentivize', 'incubate', 'initiate', 'innovate', 'integrate', 'iterate', 'maintain', 'matrix', 'maximize', 'mesh', 'monetize', 'morph', 'myocardinate',
   'negotiate', 'network', 'optimize', 'orchestrate', 'parallel task', 'plagiarize', 'pontificate', 'predominate',
   'procrastinate', 'productivate', 'productize', 'promote', 'provide access to', 'pursue', 'recaptiualize',
   'reconceptualize', 'redefine', 're-engineer', 'reintermediate', 'reinvent', 'repurpose', 'restore', 'revolutionize',
   'scale', 'seize', 'simplify', 'strategize', 'streamline', 'supply', 'syndicate', 'synergize', 'synthesize', 'target',
-  'transform', 'transition', 'underwhelm', 'unleash', 'utilize', 'visualize', 'whiteboard', 'cloudify', 'right-shore'
+  'transform', 'transition', 'underwhelm', 'unleash', 'utilize', 'visualize', 'whiteboard', 'cloudify', 'right-shore', 'run away', 'exist', 'yell'
 );
 
 var adjectives = new Array(
@@ -42,7 +41,7 @@ var adjectives = new Array(
   'synergistic', 'tactical', 'team building', 'team driven', 'technically sound', 'timely', 'top-line', 'transparent',
   'turnkey', 'ubiquitous', 'unique', 'user-centric', 'user friendly', 'value-added', 'vertical', 'viral', 'virtual',
   'visionary', 'web-enabled', 'wireless', 'world-class', 'worldwide', 'fungible', 'cloud-ready', 'elastic', 'hyper-scale',
-  'on-demand', 'cloud-based', 'cloud-centric', 'cloudified', 'agile'
+  'on-demand', 'cloud-based', 'cloud-centric', 'cloudified', 'agile', 'bold', 'depressing', 'uncontrollable', 'slippery', 'dank'
 );
 
 var nouns = new Array(
@@ -58,7 +57,7 @@ var nouns = new Array(
   'quality vectors', 'relationships', 'resources', 'results', 'ROI', 'scenarios', 'schemas', 'services', 'solutions',
   'sources', 'strategic theme areas', 'supply chains', 'synergy', 'systems', 'technologies', 'technology',
   'testing procedures', 'total linkage', 'users', 'value', 'vortals', 'web-readiness', 'web services', 'fungibility',
-  'clouds', 'nosql', 'storage', 'virtualization', 'scrums', 'sprints', 'wins'
+  'clouds', 'nosql', 'storage', 'virtualization', 'scrums', 'sprints', 'wins', 'customers', 'violations', 'restaurants', 'hotels', 'coffee shops'
 );
 
 var authors = new Array(
