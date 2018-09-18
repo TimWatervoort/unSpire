@@ -74,8 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
     body.style.color = '#161616';
     nameButton.style['background-color'] = '#161616';
     nameButton.style.color = 'black';
-    navbar.classList.remove('bg-dark');
-    navbar.classList.remove('bg-primary');
     navbar.style['background-color'] = '#020202';
     navbar.style.color = '#161616';
     save.style['background-color'] = '#161616';
@@ -87,6 +85,8 @@ document.addEventListener('DOMContentLoaded', function() {
   adventureMode.addEventListener('click', function() {
     mode = 'adventure';
     console.log('adventure mode');
+    clear();
+    body.style['background-color'] = 'blue';
     let adv = setInterval(function() {
       body.style['background-color'] = 'red';
       setTimeout(function() {
@@ -109,24 +109,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
   awfulMode.addEventListener('click', function() {
     mode = 'awful';
+    console.log('awful mode');
+    clear();
     body.style['background-color'] = 'yellow';
     body.style['font-family'] = '"Comic Sans MS", cursive, sans-serif';
     body.style.color = 'green';
-    navbar.classList.remove('bg-dark');
-    navbar.classList.remove('bg-primary');
     navbar.style['background-color'] = '#8e8301';
-    setInterval(function() {
+    let adv = setInterval(function() {
       alert('Awful mode');
-    }, 5000)
+    }, 5000);
+    darkMode.addEventListener('click', () => {
+      clearInterval(adv)
+    });
+    lightMode.addEventListener('click', () => {
+      clearInterval(adv)
+    });
+    darkerMode.addEventListener('click', () => {
+      clearInterval(adv)
+    });
+    adventureMode.addEventListener('click', () => {
+      clearInterval(adv)
+    });
   })
 
   function clear() {
     body.style.color = '';
+    body.style['font-family'] = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
     nameButton.style['background-color'] = '';
+    body.style['background-color'] = '';
     navbar.style['background-color'] = '';
     navbar.style.color = '';
     save.style['background-color'] = '';
     choiceButton.style['background-color'] = '';
+    nameButton.classList.remove('bg-dark');
+    nameButton.classList.remove('bg-primary');
+    navbar.classList.remove('bg-dark');
+    navbar.classList.remove('bg-primary');
   }
 
   //Fade-out function

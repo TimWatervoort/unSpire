@@ -7,8 +7,10 @@ button {
   width: 200px;
 }
 
-@media (max-width: 600px){
-  cho {
-    display: block;
-  }
+h4{
+  font-size: 60px;
+}
+
+label {
+  font-size: 30px;
 }
