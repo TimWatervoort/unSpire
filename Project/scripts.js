@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   //define DOM elements
-  const name = document.querySelector('#name');
+  const name = document.querySelector('#name'); //name input
   const welcome = document.querySelector('#welcome');
   const hello = document.querySelector('#hello');
   const body = document.querySelector('body');
@@ -19,11 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const cardthing = document.querySelector('#cardthing');
   const save = document.querySelector('#save');
   const holder = document.querySelector('#holder');
+  const brand = document.querySelector('.navbar-brand')
   let url, nickname, author;
-
-
-
-
 
   fadeMeIn(hello);
   setTimeout(() => {
@@ -37,18 +34,31 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!name.value) {
       console.log('no name');
     } else {
-      welcome.style.opacity = 0.01;
-      welcome.innerText = `Welcome, ${name.value}.`
-      fadeMeIn(welcome);
-      hideForm();
+      spin();
+      fadeMeOut(nameForm);
       setTimeout(() => {
-        fadeMeIn(choiceForm);
+        welcomeMe();
+        hideForm();
+        fadeMeIn(welcome);
       }, 1000);
       setTimeout(() => {
-        fadeMeIn(choiceButton);
+        fadeMeIn(choiceForm);
       }, 2000);
+      setTimeout(() => {
+        fadeMeIn(choiceButton);
+      }, 3000);
     }
   })
+
+  function welcomeMe() {
+    welcome.style.opacity = 0.01;
+    welcome.innerText = `Welcome, ${name.value}.`
+  }
+
+  function spin() {
+    nameButton.innerHTML = '<i class="fas fa-key"></i>';
+    nameButton.classList.add('spinnyBoi');
+  }
 
   //Remove the welcome form
   function hideForm() {
@@ -68,6 +78,12 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (personal.checked) {
       persFunc();
     }
+    choiceButton.classList.add('spinnyBoi');
+    choiceButton.innerHTML = '<i class="fas fa-check-circle"></i>';
+    setTimeout(() => {
+      choiceButton.classList.remove('spinnyBoi');
+      choiceButton.innerHTML = 'Inspire Me';
+    }, 1500);
   })
 
   //Clear everything
@@ -243,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let randNum = Math.floor(Math.random() * authors.length);
     author = authors[randNum];
     return author;
-    }
+  }
 
 
   //Fade-in function

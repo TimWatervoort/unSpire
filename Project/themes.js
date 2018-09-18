@@ -116,6 +116,9 @@ document.addEventListener('DOMContentLoaded', function() {
     mode = 'awful';
     console.log('awful mode');
     clear();
+    name.classList.add('spinnyBoi');
+    welcome.classList.add('spinnyBoi');
+    welcome.innerText = 'Why'
     body.style['background-color'] = 'yellow';
     body.style['font-family'] = '"Comic Sans MS", cursive, sans-serif';
     body.style.color = 'green';

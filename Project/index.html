@@ -31,11 +31,11 @@ font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;'>
           Themes
         </a>
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item text-secondary" id='lightMode' href="#">Light Mode</a>
-            <a class="dropdown-item text-secondary" id='darkMode' href="#">Dark Mode</a>
-            <a class="dropdown-item text-secondary" id='darkerMode' href="#">Darker Mode</a>
-            <a class="dropdown-item text-secondary" id='adventureMode' href="#">Adventure Mode</a>
-            <a class="dropdown-item text-secondary" id='awfulMode' href="#">Awful Mode</a>
+            <a class="dropdown-item text-secondary" id='lightMode' href="#"><i class="fas fa-angle-double-right"></i> Light Mode</a>
+            <a class="dropdown-item text-secondary" id='darkMode' href="#"><i class="fas fa-angle-double-right"></i> Dark Mode</a>
+            <a class="dropdown-item text-secondary" id='darkerMode' href="#"><i class="fas fa-angle-double-right"></i> Darker Mode</a>
+            <a class="dropdown-item text-secondary" id='adventureMode' href="#"><i class="fas fa-angle-double-right"></i> Adventure Mode</a>
+            <a class="dropdown-item text-secondary" id='awfulMode' href="#"><i class="fas fa-angle-double-right"></i> Awful Mode</a>
           </div>
         </li>
       </ul>
@@ -58,15 +58,18 @@ font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;'>
         <div>
           <label for='seeking'>What type of inspiration are you seeking?</label><br>
           <div class='bg-dark mx-auto text-center py-3' id='cho' style='border: 2px solid black;'>
-            <span class='mx-3'>
-              <input type='radio' name='choice' value='corporate' id='corporate'> Corporate
-            </span>
-            <span class='mx-3'>
-              <input type='radio' name='choice' value='spiritual' id='naming'> Naming
-            </span>
-            <span class='mx-3'>
-              <input type='radio' name='choice' value='personal' id='personal'> Personal
-            </span>
+            <div class='mx-3'>
+              <input class='radform' type='radio' name='choice' value='corporate' id='corporate'>
+              <label for='corporate' class='radlabel'> I need motivation for my business.</label>
+            </div>
+            <div class='mx-3'>
+              <input type='radio' class='radform' name='choice' value='spiritual' id='naming'>
+              <label for='naming' class='radlabel'> I need inspiration for a name.</label>
+            </div>
+            <div class='mx-3'>
+              <input type='radio' class='radform' name='choice' value='personal' id='personal'>
+              <label for='personal' class='radlabel'> I need a life-changing quote.</label>
+            </div>
           </div>
         </div>
         <button class='btn btn-dark mt-3' type='submit' id='choiceButton' style='opacity:0'>Inspire Me</button>
