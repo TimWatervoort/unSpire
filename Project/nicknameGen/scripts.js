@@ -57,10 +57,22 @@ nameForm.addEventListener('submit', function(event) {
 })
 
 function capitalize(item) {
-  let arr = item.split('');
-  let firstLetter = arr[0].toUpperCase();
-  arr[0] = firstLetter;
-  let final = arr.join('')
+  let final;
+  if (/\s/.test(item)) {
+    let arr1 = item.split(' ');
+    for (var i = 0; i < arr1.length; i++) {
+      let arr2 = arr1[i].split('');
+      let firstLetter = arr2[0].toUpperCase();
+      arr2[0] = firstLetter;
+      arr1[i] = arr2.join('');
+    }
+    final = arr1.join(' ')
+  } else {
+    let arr2 = item.split('');
+    let firstLetter = arr2[0].toUpperCase();
+    arr2[0] = firstLetter;
+    final = arr2.join('');
+  }
   return final;
 }
 
