@@ -22,12 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let url, nickname, author;
 
 
-  let advInd = Math.floor(Math.random() * adverbs.length);
-  let verInd = Math.floor(Math.random() * verbs.length);
-  let adj1Ind = Math.floor(Math.random() * adjectives.length);
-  let nouInd = Math.floor(Math.random() * nouns.length);
 
-  let original = [adverbs[advInd], verbs[verInd], adjectives[adj1Ind], nouns[nouInd]];
 
 
   fadeMeIn(hello);
@@ -99,6 +94,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Set the phrase for the corporate choice
   function getCorpBS() {
+    let advInd = Math.floor(Math.random() * adverbs.length);
+    let verInd = Math.floor(Math.random() * verbs.length);
+    let adj1Ind = Math.floor(Math.random() * adjectives.length);
+    let nouInd = Math.floor(Math.random() * nouns.length);
+
+    let original = [adverbs[advInd], verbs[verInd], adjectives[adj1Ind], nouns[nouInd]];
     translate(original.join(' '));
   }
 
@@ -177,7 +178,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Set the nickname for the naming choice
   function getNickname() {
-    let num = Math.floor(Math.random() * 1);
+    let advInd = Math.floor(Math.random() * adverbs.length);
+    let verInd = Math.floor(Math.random() * verbs.length);
+    let adj1Ind = Math.floor(Math.random() * adjectives.length);
+    let nouInd = Math.floor(Math.random() * nouns.length);
+
+    let original = [adverbs[advInd], verbs[verInd], adjectives[adj1Ind], nouns[nouInd]];
+    let num = Math.floor(Math.random() * 2);
     if (num === 0) {
       nickname = `${capitalize(original[0])} ${capitalize(original[1])}`
     } else {

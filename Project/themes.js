@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
   lightMode.addEventListener('click', function() {
     mode = 'light'
     console.log('light mode');
+    clear();
+    body.style['font-family'] = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
     body.style['background-color'] = '#82a7f2';
     body.style.color = 'black';
     navbar.classList.remove('bg-dark');
@@ -51,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mode = 'dark'
     console.log('dark mode');
     clear();
+    body.style['font-family'] = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
     body.style['background-color'] = '#171918';
     body.style.color = 'white';
     navbar.classList.add('bg-dark');
@@ -70,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mode = 'darker'
     console.log('darker mode');
     clear();
+    body.style['font-family'] = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
     body.style['background-color'] = 'black';
     body.style.color = '#161616';
     nameButton.style['background-color'] = '#161616';
@@ -86,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mode = 'adventure';
     console.log('adventure mode');
     clear();
+    body.style['font-family'] = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
     body.style['background-color'] = 'blue';
     let adv = setInterval(function() {
       body.style['background-color'] = 'red';
@@ -115,26 +120,11 @@ document.addEventListener('DOMContentLoaded', function() {
     body.style['font-family'] = '"Comic Sans MS", cursive, sans-serif';
     body.style.color = 'green';
     navbar.style['background-color'] = '#8e8301';
-    let adv = setInterval(function() {
-      alert('Awful mode');
-    }, 5000);
-    darkMode.addEventListener('click', () => {
-      clearInterval(adv)
-    });
-    lightMode.addEventListener('click', () => {
-      clearInterval(adv)
-    });
-    darkerMode.addEventListener('click', () => {
-      clearInterval(adv)
-    });
-    adventureMode.addEventListener('click', () => {
-      clearInterval(adv)
-    });
-  })
+  });
 
   function clear() {
     body.style.color = '';
-    body.style['font-family'] = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
+    body.style['font-family'] = '';
     nameButton.style['background-color'] = '';
     body.style['background-color'] = '';
     navbar.style['background-color'] = '';

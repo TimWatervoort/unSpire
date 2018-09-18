@@ -1,16 +1,83 @@
-#name{
-  background-color:grey;
+#name {
+  background-color: grey;
   border: 3px solid grey;
 }
 
-button {
-  width: 200px;
+@media (orientation:landscape) {
+  h4 {
+    font-size: 60px;
+  }
+  label, #name, #nameButton, #save, #choiceButton {
+    font-size: 20px;
+  }
+  #prev, #next {
+    width: 200px;
+  }
+  .nav-link, .nav-item {
+    font-size: 17px;
+  }
+  .navbar-brand {
+    font-size: 25px;
+  }
+  #cho {
+    font-size: 20px;
+    width: 500px;
+  }
+  #cardthing {
+    font-size: 18px;
+    width: 25rem;
+  }
+  p {
+    font-size: 18px;
+  }
 }
 
-h4{
-  font-size: 60px;
-}
-
-label {
-  font-size: 30px;
+@media(orientation:portrait) {
+  #name {
+    width: 300px;
+    height: 40px;
+    font-size: 30px;
+  }
+  button {
+    width: 300px;
+    height: auto;
+    font-size: 25px;
+  }
+  #nameButton, #choiceButton, #save, #prev, #next {
+    font-size: 30px;
+  }
+  #prev, #next{
+    width: 200px;
+  }
+  .navbar-brand {
+    font-size: 35px;
+  }
+  #cho {
+    font-size: 30px;
+    width: 500px;
+  }
+  #cardthing {
+    font-size: 30px;
+    width: 35rem;
+  }
+  nav a {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 80px;
+    width: 100%;
+  }
+  label {
+    font-size: 50px;
+    width: 100%;
+  }
+  p {
+    font-size: 30px;
+  }
+  .btn-link {
+    font-size: 30px;
+  }
+  .nav-link, .nav-item {
+    font-size: 30px;
+  }
 }
