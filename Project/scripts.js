@@ -86,6 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1500);
   })
 
+  
+
   //Clear everything
   function clear() {
     clearInterval(1);

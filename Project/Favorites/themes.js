@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
   lightMode.addEventListener('click', function() {
     mode = 'light'
     console.log('light mode');
+    clear();
+    body.style['font-family'] = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
     body.style['background-color'] = '#82a7f2';
     body.style.color = 'black';
     navbar.classList.remove('bg-dark');
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mode = 'dark'
     console.log('dark mode');
     clear();
+    body.style['font-family'] = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
     body.style['background-color'] = '#171918';
     body.style.color = 'white';
     navbar.classList.add('bg-dark');
@@ -45,6 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
     mode = 'darker'
     console.log('darker mode');
     clear();
+    body.style['font-family'] = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
     navbar.classList.remove('bg-dark');
     navbar.classList.remove('bg-primary');
     navbar.style['background-color'] = '#020202';
@@ -56,6 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
   adventureMode.addEventListener('click', function() {
     mode = 'adventure';
     console.log('adventure mode');
+    clear();
+    body.style['font-family'] = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
     let adv = setInterval(function() {
       body.style['background-color'] = 'red';
       setTimeout(function() {
@@ -97,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function clear() {
     body.style.color = '';
+    body.style['font-family'] = '';
     navbar.style['background-color'] = '';
     navbar.style.color = '';
   }

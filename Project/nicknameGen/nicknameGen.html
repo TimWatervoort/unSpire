@@ -4,31 +4,31 @@
 <head>
   <meta charset="utf-8">
   <title>&#252;nSpire</title>
-  <link rel='icon' href='u-umlaut.png'>
+  <link rel='icon' href='../u-umlaut.png'>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel='stylesheet' href='styles.css'>
+  <link rel='stylesheet' href='../styles.css'>
 </head>
 
 <body style='background-color: #171918;
 color:white;
 font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;'>
   <nav class='navbar navbar-dark navbar-expand-lg bg-dark mb-3'>
-    <a class='navbar-brand' href='index.html'>&#252;nSpire</a>
+    <a class='navbar-brand' href='../index.html'>&#252;nSpire</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <span class="navbar-toggler-icon"></span>
+</button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class='navbar-nav mr-auto'>
         <li class='nav-item'>
-          <a class='nav-link' href='About/about.html'>About Us</a>
+          <a class='nav-link' href='../About/about.html'>About Us</a>
         </li>
-        
+
         <li class='nav-item dropdown'>
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Features </a>
+        Features </a>
           <div class='dropdown-menu bg-dark'>
-            <a class='dropdown-item text-secondary' href='Favorites/favorites.html'>Favorites</a>
+            <a class='dropdown-item text-secondary' href='../Favorites/favorites.html'>Favorites</a>
             <a class='dropdown-item text-secondary' href='nicknameGen/nicknameGen.html'>Nickname Generator</a>
           </div>
         </li>
@@ -36,8 +36,8 @@ font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;'>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Themes
-        </a>
+        Themes
+      </a>
           <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown2">
             <a class="dropdown-item text-secondary" id='lightMode' href="#"><i class="fas fa-angle-double-right"></i> Light Mode</a>
             <a class="dropdown-item text-secondary" id='darkMode' href="#"><i class="fas fa-angle-double-right"></i> Dark Mode</a>
@@ -50,64 +50,49 @@ font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;'>
       <a class='nav-item'>Tomorrow's Inspiration, Today</a>
     </div>
   </nav>
-
   <main>
-    <div class='container mt-5'>
-      <h4 class='text-center' id='welcome'></h4>
-      <form class='mx-auto text-center' id='nameForm'>
-        <h4 id='hello' style='opacity:0;'>Hello.</h4>
-        <div id='nameInput' class='mx-auto' style='opacity:0;'>
-          <label id='nameLabel' for='name'>What's your name?</label><br>
-          <input type='text' id='name' required autocomplete='off' pattern='[a-zA-Z]*\s*[a-zA-Z]*'>
+    <div class='mx-auto text-center'>
+      <h3 id='welcome' style='opacity:0'>Welcome to &#252;nSpire's Nickname Generator.</h3>
+      <h5 id='welcome2' style='opacity:0'>Here you can receive a new nickname.</h5>
+      <h5 id='welcome3' style='opacity:0'>First, we'd like a bit of information.</h5>
+    </div>
+    <div class='mx-auto text-center'>
+      <form id='nameForm' style='opacity:0'>
+        <div class='mt-4' id='firstNameForm'>
+          <input type='text' name='firstName' id='firstName' required autocomplete="off" pattern='[a-zA-Z]*-*[a-zA-Z]*' placeholder='Your first name...'><br>
+
         </div>
-        <button class='btn btn-dark my-3' type='submit' id='nameButton' style='opacity:0;'>ENTER</button>
-      </form>
-      <form class='mx-auto text-center my-2' id='choiceForm' style='opacity:0'>
+        <div class='mt-2' id='lastNameForm'>
+          <input type='text' name='lastName' id='lastName' required autocomplete="off" pattern='[a-zA-Z]*-*[a-zA-Z]*' placeholder='Your last name...'><br>
+
+        </div>
+        <div class='mt-2' id='imgForm'>
+          <input type='url' name='imgInput' id='imgInput' autocomplete="off" placeholder='A link to your picture (optional)...'><br>
+
+        </div>
         <div>
-          <label for='seeking'>What type of inspiration are you seeking?</label><br>
-          <div class='bg-dark mx-auto text-center py-3' id='cho' style='border: 2px solid black;'>
-            <div class='mx-3'>
-              <input class='radform' type='radio' name='choice' value='corporate' id='corporate'>
-              <label for='corporate' class='radlabel'> I need motivation for my business.</label>
-            </div>
-            <div class='mx-3'>
-              <input type='radio' class='radform' name='choice' value='spiritual' id='naming'>
-              <label for='naming' class='radlabel'> I need inspiration for a name.</label>
-            </div>
-            <div class='mx-3'>
-              <input type='radio' class='radform' name='choice' value='personal' id='personal'>
-              <label for='personal' class='radlabel'> I need a life-changing quote.</label>
-            </div>
-          </div>
+          <button class='btn btn-dark my-3' type='submit' id='nameSubmit'>RECEIVE</button>
         </div>
-        <button class='btn btn-dark mt-3' type='submit' id='choiceButton' style='opacity:0'>Inspire Me</button>
       </form>
     </div>
-    <div id='cardthing' class="card mx-auto my-3 text-center" style="background-color: #171918;border:none;opacity:0;">
+
+    <div id='cardthing' class="card mx-auto my-3 text-center" style="background-color: #171918; border:none; opacity:0;">
       <img class="card-img-top" id='pic' alt="">
       <div class="card-body">
         <p class="card-text" id='message'></p>
       </div>
     </div>
-    <div class='mx-auto text-center'>
-      <button class='btn btn-dark mb-3' id='save' style='opacity:0;'>Save</button>
-      <div>
-        <div id='holder'></div>
+
   </main>
 
-  <footer class='bg-dark' style='opacity:0.6;'>
-    <div class='row mx-auto'>
-      <div class='col'>
-        <p class='small pt-3 pb-0 pl-3'>&#252;nSpire - Tomorrow's Inspiration, Today.</p>
-      </div>
-    </div>
+  <footer>
   </footer>
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script src='arrays.js'></script>
+  <script src='../arrays.js'></script>
   <script src='scripts.js'></script>
   <script src='themes.js'></script>
 </body>

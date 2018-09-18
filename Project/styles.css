@@ -140,3 +140,7 @@
     transform: rotate(360deg);
   }
 }
+
+#firstName, #lastName, #imgInput {
+  width: 400px;
+}
