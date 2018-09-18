@@ -21,6 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
   const holder = document.querySelector('#holder');
   let url, nickname, author;
 
+
+  let advInd = Math.floor(Math.random() * adverbs.length);
+  let verInd = Math.floor(Math.random() * verbs.length);
+  let adj1Ind = Math.floor(Math.random() * adjectives.length);
+  let nouInd = Math.floor(Math.random() * nouns.length);
+
+  let original = [adverbs[advInd], verbs[verInd], adjectives[adj1Ind], nouns[nouInd]];
+
+
   fadeMeIn(hello);
   setTimeout(() => {
     fadeMeIn(nameInput);
@@ -90,11 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Set the phrase for the corporate choice
   function getCorpBS() {
-    url = 'https://corporatebs-generator.sameerkumar.website/'
-    axios.get(url)
-      .then(function(response) {
-        translate(response.data.phrase);
-      })
+    translate(original.join(' '));
   }
 
   //translate into oblivion
@@ -102,27 +107,27 @@ document.addEventListener('DOMContentLoaded', function() {
     let str2, str3, str4, str5, str6;
     url = `https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str}&lang=en-is`
     axios.get(url)
-      .then (function(response) {
+      .then(function(response) {
         str2 = response.data.text[0];
         axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str2}&lang=is-ta`)
-          .then (function(response) {
+          .then(function(response) {
             str3 = response.data.text[0];
             axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str3}&lang=ta-ru`)
-            .then (function(response) {
-              str4 = response.data.text[0];
-              axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str4}&lang=ru-ja`)
-              .then (function(response) {
-                str5 = response.data.text[0];
-                axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str5}&lang=ja-zh`)
-                .then (function(response) {
-                  str6 = response.data.text[0];
-                  axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str6}&lang=zh-en`)
-                  .then (function(response) {
-                    msg.innerText = response.data.text[0];
+              .then(function(response) {
+                str4 = response.data.text[0];
+                axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str4}&lang=ru-ja`)
+                  .then(function(response) {
+                    str5 = response.data.text[0];
+                    axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str5}&lang=ja-zh`)
+                      .then(function(response) {
+                        str6 = response.data.text[0];
+                        axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str6}&lang=zh-en`)
+                          .then(function(response) {
+                            msg.innerText = capitalize(response.data.text[0]);
+                          })
+                      })
                   })
-                })
               })
-            })
           })
       })
   }
@@ -172,16 +177,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Set the nickname for the naming choice
   function getNickname() {
-    url = 'https://corporatebs-generator.sameerkumar.website/';
-    axios.get(url)
-      .then(function(response) {
-        let num = Math.floor(Math.random() * 4);
-        let num2 = Math.floor(Math.random() * 4);
-        nickname = `${response.data.phrase.split(' ')[num]} ${response.data.phrase.split(' ')[num2]}`;
-      })
-    return nickname;
+    let num = Math.floor(Math.random() * 1);
+    if (num === 0) {
+      nickname = `${capitalize(original[0])} ${capitalize(original[1])}`
+    } else {
+      nickname = `${capitalize(original[2])} ${capitalize(original[3])}`
+    }
+    return nickname
   }
-  getNickname();
 
   //Set the face for the naming choice
   function getFace() {
@@ -193,6 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
+  //Set the card for the personal choice
   function persFunc() {
     save.style.opacity = 0;
     cardthing.style.opacity = 0;
@@ -213,14 +217,14 @@ document.addEventListener('DOMContentLoaded', function() {
     axios.get(url)
       .then(function(response) {
         let innards = response.data[0].content.replace(/<\/*p>/g, '');
-        let year = Math.floor(Math.random()*2018);
+        let year = Math.floor(Math.random() * 2018);
         msg.innerHTML = `${innards}<br>-${author}, ${year} ${adbc()}`;
       });
   }
 
   function adbc() {
     let num = Math.floor(Math.random() * 100);
-    if (num % 2 === 0){
+    if (num % 2 === 0) {
       return 'AD';
     } else {
       return 'BC';
@@ -229,17 +233,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Attribute author to quote
   function getAuthor() {
-    let num = Math.floor(Math.random() * 9);
-    let num2 = Math.floor(Math.random() * 9);
-    let num3 = Math.floor(Math.random() * 9);
-    url = `http://www.omdbapi.com/?apikey=1a115cca&i=tt0816${num}${num2}${num3}`
-    axios.get(url)
-      .then(function(response) {
-        author = `${response.data.Actors.split(',')[0]}`;
-      })
+    let randNum = Math.floor(Math.random() * authors.length);
+    author = authors[randNum];
     return author;
-  }
-  getAuthor();
+    }
+
 
   //Fade-in function
   function fadeMeIn(item) {
