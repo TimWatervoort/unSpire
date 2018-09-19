@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
       persFunc();
     }
     choiceButton.classList.add('spinnyBoi');
-    choiceButton.innerHTML = '<i class="fas fa-check-circle"></i>';
+    choiceButton.innerHTML = '<i class="fas fa-cog"></i>';
     setTimeout(() => {
       choiceButton.classList.remove('spinnyBoi');
       choiceButton.innerHTML = 'Inspire Me';

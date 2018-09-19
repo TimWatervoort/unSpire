@@ -139,6 +139,8 @@ document.addEventListener('DOMContentLoaded', function() {
     navbar.classList.remove('bg-primary');
     name.classList.remove('spinnyBoi');
     welcome.classList.remove('spinnyBoi');
+    nameButton.style.color = 'white';
+    choiceButton.style.color = 'white';
   }
 
   //Fade-out function
