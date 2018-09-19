@@ -29,6 +29,8 @@ As a profession, graphic designers have been shamefully remiss or ineffective ab
 Below all of these, you will see a save button, which will let you access these later.
 
 On the navbar, you will see four buttons. The first, the logo, will take you to the homepage.
+The 'About us' button will take you to an informational page with a listing of all of the APIs used in this site.
+
 The features dropdown has two options:
 
 << Favorites >>
