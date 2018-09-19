@@ -3,7 +3,7 @@ To reach your inspirational potential, when you navigate to the main page, input
 ![Homepage](/Project/images/homepage.png)
 
 You will be taken to a welcome page where you can choose one of three options.
-![Choices](/images/choices.png?raw=true "Choices")
+![Choices](/Project/images/choices.png?raw=true "Choices")
 
 << I need motivation for my business. >>
 
@@ -12,7 +12,7 @@ To be more precise, this quote is a sentence made from random corporate buzzword
 'Cooperation To Reduce The High Level Of Human Resources'
 and
 'The Fitness Of The Scene To Replace'.
-![Corporate](/images/corporate.png?raw=true "Corporate")
+![Corporate](/Project/images/corporate.png?raw=true "Corporate")
 
 << I need inspiration for a name. >>
 
@@ -21,7 +21,7 @@ Actually, this name is also randomly generated, and you are shown their nickname
 Lloyd "Cross Functional Testing Procedures" Simmons
 and
 Cristóvão "Worldwide Storage" Pereira.
-![Naming](/images/naming.png?raw=true "Naming")
+![Naming](/Project/images/naming.png?raw=true "Naming")
 
 << I need a life changing quote. >>
 
@@ -32,7 +32,7 @@ You get up early in the morning and you work all day. That’s the only secret.
 and
 As a profession, graphic designers have been shamefully remiss or ineffective about plying their craft for social or political betterment.
 -Kanye West, 916 AD
-![Quotes](/images/quote.png?raw=true "Quotes")
+![Quotes](/Project/images/quote.png?raw=true "Quotes")
 
 Below all of these, you will see a save button, which will let you access these later.
 
@@ -43,37 +43,37 @@ The features dropdown has two options:
 
 << Favorites >>
 The favorites page lets you access any inspirational gems that you have saved, cycle through them, and remove them when you're tired of them.
-![Favorites](/images/favorites.png?raw=true "Favorites")
+![Favorites](/Project/images/favorites.png?raw=true "Favorites")
 
 << Nickname Generator >>
 The nickname generator is very similar to the naming inspiration option, but allows your own input of name and an optional photo.
-![Nickname Generator](/images/nickname.png?raw=true "Nickname Generator")
+![Nickname Generator](/Project/images/nickname.png?raw=true "Nickname Generator")
 
 The themes dropdown has five options:
 
 << Light Mode >>
 
 A pleasant blue theme.
-![Light Mode](/images/lightmode.png?raw=true "Light Mode")
+![Light Mode](/Project/images/lightmode.png?raw=true "Light Mode")
 
 << Dark Mode >>
 
 The default theme, made of different greys.
-![Dark Mode](/images/darkmode.png?raw=true "Dark Mode")
+![Dark Mode](/Project/images/darkmode.png?raw=true "Dark Mode")
 
 << Darker Mode >>
 
 Difficult to read, made mostly of black with some greys.
-![Darker Mode](/images/darkermode.png?raw=true "Darker Mode")
+![Darker Mode](/Project/images/darkermode.png?raw=true "Darker Mode")
 
 << Adventure Mode >>
 
 Not for the faint of heart, this mode will flash red and blue until you choose a different theme.
-![Adventure Mode](/images/adventuremode.png?raw=true "Adventure Mode")
+![Adventure Mode](/Project/images/adventuremode.png?raw=true "Adventure Mode")
 
 << Awful Mode >>
 
 Avoid.
-![Awful Mode](/images/awfulmode.png?raw=true "Awful Mode")
+![Awful Mode](/Project/images/awfulmode.png?raw=true "Awful Mode")
 
 Please enjoy unSpire!
