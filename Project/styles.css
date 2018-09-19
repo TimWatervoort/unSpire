@@ -10,7 +10,7 @@
   label, #name, #nameButton, #save, #choiceButton {
     font-size: 20px;
   }
-  #prev, #next {
+  #prev, #next, #remove {
     width: 200px;
   }
   .nav-link, .nav-item {
@@ -46,7 +46,7 @@
   #nameButton, #choiceButton, #save, #prev, #next {
     font-size: 30px;
   }
-  #prev, #next {
+  #prev, #next, #remove {
     width: 200px;
   }
   .navbar-brand {
@@ -106,10 +106,6 @@
 
 .radlabel:hover {
   color: black;
-}
-
-#name:focus {
-  border: 2px solid white;
 }
 
 .navbar-brand:hover {

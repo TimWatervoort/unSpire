@@ -18,8 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const pic = document.querySelector('#pic');
   const cardthing = document.querySelector('#cardthing');
   const save = document.querySelector('#save');
-  const holder = document.querySelector('#holder');
-  const brand = document.querySelector('.navbar-brand')
+  const brand = document.querySelector('.navbar-brand');
   let url, nickname, author;
 
   fadeMeIn(hello);
@@ -102,12 +101,17 @@ document.addEventListener('DOMContentLoaded', function() {
     cardthing.style.opacity = 0;
     getCorpBS();
     getPicture();
-    cardthing.style['background-color'] = 'black';
-    cardthing.style.border = '3px solid grey';
+    cardIn();
     setTimeout(function() {
       fadeMeIn(cardthing);
       fadeMeIn(save);
     }, 1000);
+  }
+
+  //Make the card visible
+  function cardIn() {
+    cardthing.style['background-color'] = 'black';
+    cardthing.style.border = '3px solid grey';
   }
 
   //Set the phrase for the corporate choice
@@ -142,7 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         str6 = response.data.text[0];
                         axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str6}&lang=zh-en`)
                           .then(function(response) {
-                            msg.innerText = capitalize(response.data.text[0]);
+                            let hold = capitalize(response.data.text[0])
+                            let hold2 = hold.replace(',' , '');
+                            msg.innerText = hold2;
                           })
                       })
                   })
@@ -166,8 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
     cardthing.style.opacity = 0;
     getName();
     getFace();
-    cardthing.style['background-color'] = 'black';
-    cardthing.style.border = '3px solid grey';
+    cardIn();
     setTimeout(function() {
       fadeMeIn(cardthing);
       fadeMeIn(save);
@@ -239,8 +244,7 @@ document.addEventListener('DOMContentLoaded', function() {
     cardthing.style.opacity = 0;
     getQuote();
     getAuthor();
-    cardthing.style['background-color'] = 'black';
-    cardthing.style.border = '3px solid grey';
+    cardIn();
     setTimeout(function() {
       fadeMeIn(cardthing);
       fadeMeIn(save);
@@ -311,8 +315,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let text = message.innerHTML;
     let img = pic.getAttribute('src');
     console.log('saved');
+    let newKey = parseInt(Object.keys(localStorage)[localStorage.length-1])+1;
     localStorage.setItem(
-      localStorage.length, [text, img]
+      newKey, [text, img]
     )
   }
 });

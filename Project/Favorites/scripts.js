@@ -8,19 +8,21 @@ document.addEventListener('DOMContentLoaded', function() {
   let message = document.querySelector('#message');
   let next = document.querySelector('#next');
   let prev = document.querySelector('#prev');
+  let remove = document.querySelector('#remove');
 
-  let itemNo = 0;
+  let itemNo = Object.keys(localStorage)[0];
 
-  let text = localStorage.getItem(itemNo).split(',')[0];
-  let img = localStorage.getItem(itemNo).split(',')[1];
-
-  pic.setAttribute('src', img);
-  if (text.length === 0) {
-    message.innerText = 'You have not selected any favorites yet!';
-  } else {
+  //set initial values for card
+  if (localStorage.length > 0) {
+    let text = localStorage.getItem(itemNo).split(',')[0];
+    let img = localStorage.getItem(itemNo).split(',')[1];
     message.innerText = text;
+    pic.setAttribute('src', img);
+  } else {
+    message.innerText = 'You have not selected any favorites yet!';
   }
 
+  //fade in function
   function fadeMeIn(item) {
     let op = 0.01;
     let fadeIn = setInterval(function() {
@@ -37,14 +39,14 @@ document.addEventListener('DOMContentLoaded', function() {
   fadeMeIn(cardthing);
   setTimeout(() => {
     fadeMeIn(next);
-  }, 1000)
-  setTimeout(() => {
     fadeMeIn(prev);
-  }, 1000);
+    fadeMeIn(remove);
+  }, 1000)
 
-  //set functionality for next button
+  //set listener for next button
   next.addEventListener('click', goNext);
 
+  //set functionality for next button
   function goNext() {
     if (itemNo === localStorage.length - 1) {
       itemNo = -1;
@@ -57,9 +59,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   }
 
-  //set functionality for previous button
+  //set listener for previous button
   prev.addEventListener('click', goBack);
 
+  //set functionality for back button
   function goBack() {
     if (itemNo === 0) {
       itemNo = localStorage.length;
@@ -70,6 +73,23 @@ document.addEventListener('DOMContentLoaded', function() {
     pic.setAttribute('src', img);
     message.innerText = text;
   }
+
+  //function to get the key of local storage from the current value
+  function getKey(value) {
+    return Object.keys(localStorage).find((key) => {
+      return localStorage[key] === value;
+    });
+  }
+
+  //set functionality for remove button
+  remove.addEventListener('click', function() {
+    let currentText = message.innerText;
+    let currentImg = pic.getAttribute('src');
+    let currentValue = `${currentText},${currentImg}`;
+    localStorage.removeItem(getKey(currentValue));
+    message.innerText = 'Removed!';
+    pic.setAttribute('src', '');
+  });
 
 
 })
