@@ -43,14 +43,14 @@
     height: auto;
     font-size: 25px;
   }
-  #nameButton, #choiceButton, #save, #prev, #next {
+  #nameButton, #choiceButton, #save, #prev, #next, #nameSubmit, #remove {
     font-size: 30px;
   }
   #prev, #next, #remove {
     width: 200px;
   }
   .navbar-brand {
-    font-size: 35px;
+    font-size: 50px;
   }
   #cho {
     font-size: 30px;
@@ -58,7 +58,7 @@
   }
   #cardthing {
     font-size: 30px;
-    width: 35rem;
+    width: 40rem;
   }
   nav a {
     font-size: 20px;
@@ -78,6 +78,26 @@
     font-size: 30px;
   }
   .nav-link, .nav-item {
+    font-size: 40px;
+  }
+  .dropdown-item {
+    font-size: 40px;
+  }
+  .card-body {
+    font-size: 35px;
+  }
+  #message {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 50px;
+  }
+  h5 {
+    font-size: 40px;
+  }
+  input {
+    width: 400px;
+    height: 60px;
     font-size: 30px;
   }
 }

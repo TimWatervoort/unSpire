@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-  let info = document.querySelector('#info');
+  let info = document.querySelector('.pInfo');
   let collapse = document.querySelector('#accordionExample')
 
   function fadeMeIn(item) {

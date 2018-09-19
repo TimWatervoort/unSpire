@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
   let prev = document.querySelector('#prev');
   let remove = document.querySelector('#remove');
 
-  let itemNo = Object.keys(localStorage)[0];
+  let itemNo = 0;
 
   //set initial values for card
   if (localStorage.length > 0) {
-    let text = localStorage.getItem(itemNo).split(',')[0];
-    let img = localStorage.getItem(itemNo).split(',')[1];
+    let text = localStorage.getItem(localStorage.key(itemNo)).split(',')[0];
+    let img = localStorage.getItem(localStorage.key(itemNo)).split(',')[1];
     message.innerText = text;
     pic.setAttribute('src', img);
   } else {
@@ -48,15 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //set functionality for next button
   function goNext() {
-    if (itemNo === localStorage.length - 1) {
-      itemNo = -1;
-    }
     itemNo++;
-    text = localStorage.getItem(itemNo).split(',')[0];
-    img = localStorage.getItem(itemNo).split(',')[1];
+    if (!localStorage.getItem(localStorage.key(itemNo))){
+      itemNo = 0;
+    }
+    text = localStorage.getItem(localStorage.key(itemNo)).split(',')[0];
+    img = localStorage.getItem(localStorage.key(itemNo)).split(',')[1];
     pic.setAttribute('src', img);
     message.innerText = text;
-
   }
 
   //set listener for previous button
@@ -64,12 +63,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //set functionality for back button
   function goBack() {
-    if (itemNo === 0) {
-      itemNo = localStorage.length;
-    }
     itemNo--;
-    text = localStorage.getItem(itemNo).split(',')[0];
-    img = localStorage.getItem(itemNo).split(',')[1];
+    if (!localStorage.getItem(localStorage.key(itemNo))){
+      itemNo = localStorage.length-1;
+    }
+    text = localStorage.getItem(localStorage.key(itemNo)).split(',')[0];
+    img = localStorage.getItem(localStorage.key(itemNo)).split(',')[1];
     pic.setAttribute('src', img);
     message.innerText = text;
   }
