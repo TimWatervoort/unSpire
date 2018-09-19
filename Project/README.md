@@ -1,6 +1,6 @@
 unSpire is a site that provides you with inspiration, whatever your needs.
 To reach your inspirational potential, when you navigate to the main page, input your name.
-![Homepage](/images/homepage.png?raw=true "Homepage")
+![Homepage](/images/homepage.png)
 
 You will be taken to a welcome page where you can choose one of three options.
 ![Choices](/images/choices.png?raw=true "Choices")
