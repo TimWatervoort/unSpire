@@ -118,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
     clear();
     name.classList.add('spinnyBoi');
     welcome.classList.add('spinnyBoi');
-    welcome.innerText = 'Why'
     body.style['background-color'] = 'yellow';
     body.style['font-family'] = '"Comic Sans MS", cursive, sans-serif';
     body.style.color = 'green';
@@ -138,6 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
     nameButton.classList.remove('bg-primary');
     navbar.classList.remove('bg-dark');
     navbar.classList.remove('bg-primary');
+    name.classList.remove('spinnyBoi');
+    welcome.classList.remove('spinnyBoi');
   }
 
   //Fade-out function
