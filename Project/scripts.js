@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const brand = document.querySelector('.navbar-brand');
   let url, nickname, author;
 
+  //Set initial fade-in
   fadeMeIn(hello);
   setTimeout(() => {
     fadeMeIn(nameInput);
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!name.value) {
       console.log('no name');
     } else {
-      spin();
+      spin(nameButton, 'key');
       fadeMeOut(nameForm);
       setTimeout(() => {
         welcomeMe();
@@ -49,14 +50,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   })
 
+  //Welcomes you
   function welcomeMe() {
     welcome.style.opacity = 0.01;
     welcome.innerText = `Welcome, ${name.value}.`
   }
 
-  function spin() {
-    nameButton.innerHTML = '<i class="fas fa-key"></i>';
-    nameButton.classList.add('spinnyBoi');
+  //Spins an item
+  function spin(item, icon) {
+    item.innerHTML = `<i class='fas fa-${icon}'></i>`;
+    item.classList.add('spinnyBoi');
   }
 
   //Remove the welcome form
@@ -77,15 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
     } else if (personal.checked) {
       persFunc();
     }
-    choiceButton.classList.add('spinnyBoi');
-    choiceButton.innerHTML = '<i class="fas fa-cog"></i>';
+    spin(choiceButton, 'cog');
     setTimeout(() => {
       choiceButton.classList.remove('spinnyBoi');
       choiceButton.innerHTML = 'Inspire Me';
     }, 1500);
   })
-
-
 
   //Clear everything
   function clear() {
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str6}&lang=zh-en`)
                           .then(function(response) {
                             let hold = capitalize(response.data.text[0])
-                            let hold2 = hold.replace(',' , '');
+                            let hold2 = hold.replace(',', '');
                             msg.innerText = hold2;
                           })
                       })
@@ -233,8 +233,12 @@ document.addEventListener('DOMContentLoaded', function() {
     url = 'https://faceapi.herokuapp.com/faces?n=1';
     axios.get(url)
       .then(function(response) {
-        let imgUrl = response.data[0]['image_url'];
-        pic.setAttribute('src', imgUrl);
+        if (!response.status === 200) {
+          return;
+        } else {
+          let imgUrl = response.data[0]['image_url'];
+          pic.setAttribute('src', imgUrl);
+        }
       });
   }
 
@@ -315,7 +319,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let text = message.innerHTML;
     let img = pic.getAttribute('src');
     console.log('saved');
-    let newKey = parseInt(Object.keys(localStorage)[localStorage.length-1])+1;
+    let newKey = parseInt(Object.keys(localStorage)[localStorage.length - 1]) + 1;
     localStorage.setItem(
       newKey, [text, img]
     )
