@@ -26,13 +26,22 @@ function setMessage(x, y) {
   return `${x} "${getNickname()}" ${y}`
 }
 
+//Set the nickname
 function getNickname() {
   let advInd = Math.floor(Math.random() * adverbs.length);
   let verInd = Math.floor(Math.random() * verbs.length);
   let adj1Ind = Math.floor(Math.random() * adjectives.length);
   let nouInd = Math.floor(Math.random() * nouns.length);
+  let verb = verbs[verInd];
+  let altVerb;
 
-  let original = [adverbs[advInd], verbs[verInd], adjectives[adj1Ind], nouns[nouInd]];
+  if (!/[hsz]$/.test(verb)) {
+    altVerb = `${verb.replace(/y$/, 'ie')}s`;
+  } else {
+    altVerb = `${verb}es`
+  }
+
+  let original = [adverbs[advInd], altVerb, adjectives[adj1Ind], nouns[nouInd]];
   let num = Math.floor(Math.random() * 2);
   if (num === 0) {
     nickname = `${capitalize(original[1])} ${capitalize(original[0])}`

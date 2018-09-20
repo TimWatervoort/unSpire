@@ -99,16 +99,16 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 250);
     }, 500);
     darkMode.addEventListener('click', () => {
-      clearInterval(adv)
+      clearInterval(adv);
     });
     lightMode.addEventListener('click', () => {
-      clearInterval(adv)
+      clearInterval(adv);
     });
     darkerMode.addEventListener('click', () => {
-      clearInterval(adv)
+      clearInterval(adv);
     });
     awfulMode.addEventListener('click', () => {
-      clearInterval(adv)
+      clearInterval(adv);
     });
   })
 

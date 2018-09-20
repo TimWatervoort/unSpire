@@ -244,7 +244,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let verInd = Math.floor(Math.random() * verbs.length);
     let adj1Ind = Math.floor(Math.random() * adjectives.length);
     let nouInd = Math.floor(Math.random() * nouns.length);
-    let altVerb = `${verbs[verInd].replace(/y$/, 'ie')}s`;
+    let verb = verbs[verInd];
+    let altVerb;
+
+    if (!/[hsz]$/.test(verb)) {
+      altVerb = `${verb.replace(/y$/, 'ie')}s`;
+    } else {
+      altVerb = `${verb}es`
+    }
 
     let original = [adverbs[advInd], altVerb, adjectives[adj1Ind], nouns[nouInd]];
     let num = Math.floor(Math.random() * 2);
