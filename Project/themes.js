@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
     body.style['font-family'] = '"Comic Sans MS", cursive, sans-serif';
     body.style.color = 'green';
     navbar.style['background-color'] = '#8e8301';
+    makeMeAwful();
   });
 
   function clear() {
@@ -157,11 +158,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  document.addEventListener('click', function(event) {
-    if (mode === 'awful') {
+  function makeMeAwful() {
+    document.addEventListener('mouseover', function(event) {
+      event.target.style['font-size'] = '70px';
+    });
+    document.addEventListener('mouseout', function(event) {
+      event.target.style['font-size'] = '';
+    });
+    document.addEventListener('click', function(event) {
       let item = event.target;
       fadeMeOut(item);
-    }
-  })
-
-})
+    });
+  }
+  
+});
