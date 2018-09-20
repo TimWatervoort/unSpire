@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', function() {
   if (localStorage.length > 0) {
     let text = localStorage.getItem(localStorage.key(itemNo)).split(',')[0];
     let img = localStorage.getItem(localStorage.key(itemNo)).split(',')[1];
-    message.innerText = text;
+    message.innerHTML = text;
     pic.setAttribute('src', img);
   } else {
-    message.innerText = 'You have not selected any favorites yet!';
+    message.innerHTML = 'You have not selected any favorites yet!';
   }
 
   //fade in function
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     text = localStorage.getItem(localStorage.key(itemNo)).split(',')[0];
     img = localStorage.getItem(localStorage.key(itemNo)).split(',')[1];
     pic.setAttribute('src', img);
-    message.innerText = text;
+    message.innerHTML = text;
   }
 
   //set listener for previous button

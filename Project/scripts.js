@@ -87,6 +87,42 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1500);
   })
 
+  //Set the card for the corporate choice
+  function corpFunc() {
+    prepContent();
+    getCorpBS();
+    getPicture();
+    cardIn();
+    setTimeout(function() {
+      fadeMeIn(cardthing);
+      fadeMeIn(save);
+    }, 1000);
+  }
+
+  //Set the card for the naming choice
+  function nameFunc() {
+    prepContent();
+    getName();
+    getFace();
+    cardIn();
+    setTimeout(function() {
+      fadeMeIn(cardthing);
+      fadeMeIn(save);
+    }, 2000);
+  }
+
+  //Set the card for the personal choice
+  function persFunc() {
+    prepContent();
+    getQuote();
+    getAuthor();
+    cardIn();
+    setTimeout(function() {
+      fadeMeIn(cardthing);
+      fadeMeIn(save);
+    }, 1000);
+  }
+
   //Clear everything
   function clear() {
     clearInterval(1);
@@ -95,17 +131,10 @@ document.addEventListener('DOMContentLoaded', function() {
     pic.setAttribute('src', '')
   }
 
-  //Set the card for the corporate choice
-  function corpFunc() {
+  //Get the results ready to fade in
+  function prepContent() {
     save.style.opacity = 0;
     cardthing.style.opacity = 0;
-    getCorpBS();
-    getPicture();
-    cardIn();
-    setTimeout(function() {
-      fadeMeIn(cardthing);
-      fadeMeIn(save);
-    }, 1000);
   }
 
   //Make the card visible
@@ -118,11 +147,11 @@ document.addEventListener('DOMContentLoaded', function() {
   function getCorpBS() {
     let advInd = Math.floor(Math.random() * adverbs.length);
     let verInd = Math.floor(Math.random() * verbs.length);
-    let adj1Ind = Math.floor(Math.random() * adjectives.length);
+    let adjInd = Math.floor(Math.random() * adjectives.length);
     let nouInd = Math.floor(Math.random() * nouns.length);
 
-    let original = [adverbs[advInd], verbs[verInd], adjectives[adj1Ind], nouns[nouInd]];
-    translate(original.join(' '));
+    let original = `${adverbs[advInd]} ${verbs[verInd]} ${adjectives[adjInd]} ${nouns[nouInd]}`
+    translate(original);
   }
 
   //translate into oblivion
@@ -166,19 +195,6 @@ document.addEventListener('DOMContentLoaded', function() {
       })
   }
 
-  //Set the card for the naming choice
-  function nameFunc() {
-    save.style.opacity = 0;
-    cardthing.style.opacity = 0;
-    getName();
-    getFace();
-    cardIn();
-    setTimeout(function() {
-      fadeMeIn(cardthing);
-      fadeMeIn(save);
-    }, 2000);
-  }
-
   //Set the name for the naming choice
   function getName() {
     url = 'https://api.randomuser.me/';
@@ -203,10 +219,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       final = arr1.join(' ')
     } else {
-      let arr2 = item.split('');
-      let firstLetter = arr2[0].toUpperCase();
-      arr2[0] = firstLetter;
-      final = arr2.join('');
+      let arr = item.split('');
+      let firstLetter = arr[0].toUpperCase();
+      arr[0] = firstLetter;
+      final = arr.join('');
     }
     return final;
   }
@@ -242,19 +258,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  //Set the card for the personal choice
-  function persFunc() {
-    save.style.opacity = 0;
-    cardthing.style.opacity = 0;
-    getQuote();
-    getAuthor();
-    cardIn();
-    setTimeout(function() {
-      fadeMeIn(cardthing);
-      fadeMeIn(save);
-    }, 1000);
-  }
-
   //Set the quote for the personal choice
   function getQuote() {
     let addOn = Math.floor(Math.random() * 50);
@@ -267,6 +270,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
+  //Randomly choose AD or BC
   function adbc() {
     let num = Math.floor(Math.random() * 100);
     if (num % 2 === 0) {
@@ -318,8 +322,13 @@ document.addEventListener('DOMContentLoaded', function() {
   function saveItem() {
     let text = message.innerHTML;
     let img = pic.getAttribute('src');
+    let newKey;
     console.log('saved');
-    let newKey = parseInt(Object.keys(localStorage)[localStorage.length - 1]) + 1;
+    if (localStorage.length === 0) {
+      newKey = 0;
+    } else {
+      newKey = parseInt(Object.keys(localStorage)[localStorage.length - 1]) + 1;
+    }
     localStorage.setItem(
       newKey, [text, img]
     )
