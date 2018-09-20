@@ -82,22 +82,12 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       pic.setAttribute('src', img);
     }
-    message.innerText = text;
-  }
-
-  //function to get the key of local storage from the current value
-  function getKey(value) {
-    return Object.keys(localStorage).find((key) => {
-      return localStorage[key] === value;
-    });
+    message.innerHTML = text;
   }
 
   //set functionality for remove button
   remove.addEventListener('click', function() {
-    let currentText = message.innerText;
-    let currentImg = pic.getAttribute('src');
-    let currentValue = `${currentText},${currentImg}`;
-    localStorage.removeItem(getKey(currentValue));
+    localStorage.removeItem(message.innerHTML);
     message.innerText = 'Removed!';
     pic.setAttribute('src', '');
   });
