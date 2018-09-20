@@ -170,5 +170,5 @@ document.addEventListener('DOMContentLoaded', function() {
       fadeMeOut(item);
     });
   }
-  
+
 });
