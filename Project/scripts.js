@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
   //Set the quote for the personal choice
   function getQuote() {
     let addOn = Math.floor(Math.random() * 50);
-    url = `http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1?${addOn}`;
+    url = `https://galvanize-cors.herokuapp.com/http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1?${addOn}`;
     axios.get(url)
       .then(function(response) {
         let innards = response.data[0].content.replace(/<\/*p>/g, '');
