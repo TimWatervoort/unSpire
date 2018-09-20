@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
   //Welcomes you
   function welcomeMe() {
     welcome.style.opacity = 0.01;
-    welcome.innerText = `Welcome, ${name.value}.`
+    welcome.innerText = `Welcome, ${name.value}.`;
   }
 
   //Spins an item
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function() {
     clearInterval(1);
     clearInterval(2);
     msg.innerText = '';
-    pic.setAttribute('src', '')
+    pic.setAttribute('src', '');
   }
 
   //Get the results ready to fade in
@@ -157,22 +157,28 @@ document.addEventListener('DOMContentLoaded', function() {
   //translate into oblivion
   function translate(str) {
     let str2, str3, str4, str5, str6;
+    //English - Icelandic
     url = `https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str}&lang=en-is`
     axios.get(url)
       .then(function(response) {
         str2 = response.data.text[0];
+        //Icelandic - Tamil
         axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str2}&lang=is-ta`)
           .then(function(response) {
             str3 = response.data.text[0];
+            //Tamil - Russian
             axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str3}&lang=ta-ru`)
               .then(function(response) {
                 str4 = response.data.text[0];
+                //Russian - Japanese
                 axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str4}&lang=ru-ja`)
                   .then(function(response) {
                     str5 = response.data.text[0];
+                    //Japanese - Chinese
                     axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str5}&lang=ja-zh`)
                       .then(function(response) {
                         str6 = response.data.text[0];
+                        //Chinese - English
                         axios.get(`https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20180914T172928Z.7de94a7b92ad4561.6c286939306fa1c81349e68c5e1e9db483390c94&text=${str6}&lang=zh-en`)
                           .then(function(response) {
                             let hold = capitalize(response.data.text[0])
@@ -200,9 +206,14 @@ document.addEventListener('DOMContentLoaded', function() {
     url = 'https://api.randomuser.me/';
     axios.get(url)
       .then(function(response) {
-        let fName = response.data.results[0].name.first;
-        let lName = response.data.results[0].name.last;
-        msg.innerText = `${capitalize(fName)} "${getNickname()}" ${capitalize(lName)}`
+        //Make sure names come back with only Latin characters
+        if (!/[a-zA-Z]+/.test(response.data.results[0].name.first)) {
+          getName();
+        } else {
+          let fName = response.data.results[0].name.first;
+          let lName = response.data.results[0].name.last;
+          msg.innerText = `${capitalize(fName)} "${getNickname()}" ${capitalize(lName)}`;
+        }
       })
   }
 
@@ -233,8 +244,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let verInd = Math.floor(Math.random() * verbs.length);
     let adj1Ind = Math.floor(Math.random() * adjectives.length);
     let nouInd = Math.floor(Math.random() * nouns.length);
+    let altVerb = `${verbs[verInd].replace(/y$/, 'ie')}s`;
 
-    let original = [adverbs[advInd], verbs[verInd], adjectives[adj1Ind], nouns[nouInd]];
+    let original = [adverbs[advInd], altVerb, adjectives[adj1Ind], nouns[nouInd]];
     let num = Math.floor(Math.random() * 2);
     if (num === 0) {
       nickname = `${capitalize(original[1])} ${capitalize(original[0])}`
@@ -246,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //Set the face for the naming choice
   function getFace() {
-    url = 'https://faceapi.herokuapp.com/faces?n=1';
+    url = 'https://galvanize-cors.herokuapp.com/https://faceapi.herokuapp.com/faces?n=1';
     axios.get(url)
       .then(function(response) {
         if (!response.status === 200) {

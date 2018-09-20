@@ -16,7 +16,7 @@ var verbs = new Array(
   'procrastinate', 'productivate', 'productize', 'promote', 'provide access to', 'pursue', 'recaptiualize',
   'reconceptualize', 'redefine', 're-engineer', 'reintermediate', 'reinvent', 'repurpose', 'restore', 'revolutionize',
   'scale', 'seize', 'simplify', 'strategize', 'streamline', 'supply', 'syndicate', 'synergize', 'synthesize', 'target',
-  'transform', 'transition', 'underwhelm', 'unleash', 'utilize', 'visualize', 'whiteboard', 'cloudify', 'right-shore', 'run away', 'exist', 'yell'
+  'transform', 'transition', 'underwhelm', 'unleash', 'utilize', 'visualize', 'whiteboard', 'cloudify', 'right-shore', 'run away', 'exist', 'yell', 'scream', 'ponder', 'worry', 'enjoy', 'become'
 );
 
 var adjectives = new Array(
@@ -41,7 +41,7 @@ var adjectives = new Array(
   'synergistic', 'tactical', 'team building', 'team driven', 'technically sound', 'timely', 'top-line', 'transparent',
   'turnkey', 'ubiquitous', 'unique', 'user-centric', 'user friendly', 'value-added', 'vertical', 'viral', 'virtual',
   'visionary', 'web-enabled', 'wireless', 'world-class', 'worldwide', 'fungible', 'cloud-ready', 'elastic', 'hyper-scale',
-  'on-demand', 'cloud-based', 'cloud-centric', 'cloudified', 'agile', 'bold', 'depressing', 'uncontrollable', 'slippery', 'dank'
+  'on-demand', 'cloud-based', 'cloud-centric', 'cloudified', 'agile', 'bold', 'depressing', 'uncontrollable', 'slippery', 'dank', 'wonderful', 'potent', 'alarming', 'frightful', 'awful'
 );
 
 var nouns = new Array(
@@ -57,9 +57,11 @@ var nouns = new Array(
   'quality vectors', 'relationships', 'resources', 'results', 'ROI', 'scenarios', 'schemas', 'services', 'solutions',
   'sources', 'strategic theme areas', 'supply chains', 'synergy', 'systems', 'technologies', 'technology',
   'testing procedures', 'total linkage', 'users', 'value', 'vortals', 'web-readiness', 'web services', 'fungibility',
-  'clouds', 'nosql', 'storage', 'virtualization', 'scrums', 'sprints', 'wins', 'customers', 'violations', 'restaurants', 'hotels', 'coffee shops'
+  'clouds', 'nosql', 'storage', 'virtualization', 'scrums', 'sprints', 'wins', 'customers', 'violations', 'restaurants', 'hotels', 'coffee shops', 'screams', 'pleas', 'shrieks', 'beverages', 'meals'
 );
 
 var authors = new Array(
-  'Socrates', 'Plato', 'Aristotle', 'Jim', 'Matthew McConaughey', 'The Moon', 'Beyonce', 'Julius Caesar', 'Gary Oldman', 'Frank from accounting', 'J.K. Rowling', 'Kanye West', 'Sandra Bullock', 'George W. Bush', 'Barack Obama', 'George Washington', 'Abraham Lincoln', 'Pythagoras', 'Isaac Newton', 'Gregor Mendel', 'Tycho Brahe', 'Albert Einstein', 'Stephen Hawking', 'Someone holding a banana', 'The Unholy One', 'God', 'Satan', 'Jesus Christ', 'Muhammad', 'The Buddha', 'Gandhi', 'Some guy at the park', 'You', 'George Clooney', 'Seth Rogen', 'Chairman Mao Zedong', 'Kim Jong-Un', 'Harry Potter', 'Batman', 'The Entire Country of Russia', 'Vladimir Putin', 'Joseph Stalin', 'Alexander the Great', 'William Shakespeare', 'Will Smith', 'Tom Hanks'
+  'Socrates', 'Plato', 'Aristotle', 'Jim', 'Matthew McConaughey', 'The Moon', 'Beyonce', 'Julius Caesar', 'Gary Oldman', 'Frank from accounting', 'J.K. Rowling', 'Kanye West', 'Sandra Bullock', 'George W. Bush', 'Barack Obama', 'George Washington', 'Abraham Lincoln', 'Pythagoras', 'Isaac Newton', 'Gregor Mendel',
+  'Tycho Brahe', 'Albert Einstein', 'Stephen Hawking', 'Someone holding a banana', 'The Unholy One', 'God', 'Satan', 'Jesus Christ', 'Muhammad', 'The Buddha', 'Gandhi', 'Some guy at the park', 'You', 'George Clooney', 'Seth Rogen', 'Chairman Mao Zedong', 'Kim Jong-Un', 'Harry Potter', 'Batman', 'The Entire Country of Russia',
+  'Vladimir Putin', 'Joseph Stalin', 'Alexander the Great', 'William Shakespeare', 'Will Smith', 'Tom Hanks', 'Nobody in particular', 'Linus Torvalds', 'Sean Connery', 'Jerry Springer', 'Dr. Phil', 'Taylor Swift', 'Lady Gaga', 'Arnold Schwarzenegger', 'Ludwig van Beethoven', 'Leonardo da Vinci', 'Vincent van Gogh'
 );
