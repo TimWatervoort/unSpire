@@ -270,13 +270,13 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
+
   //Set the quote for the personal choice
   function getQuote() {
-    let addOn = Math.floor(Math.random() * 50);
-    url = `https://galvanize-cors.herokuapp.com/http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1?${addOn}`;
+    url = `https://galvanize-cors.herokuapp.com/https://talaikis.com/api/quotes/random/`;
     axios.get(url)
       .then(function(response) {
-        let innards = response.data[0].content.replace(/<\/*p>/g, '');
+        let innards = response.data.quote
         let year = Math.floor(Math.random() * 2018);
         msg.innerHTML = `${innards}<br>-${author}, ${year} ${adbc()}`;
       });
