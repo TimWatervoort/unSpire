@@ -336,13 +336,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let img = pic.getAttribute('src');
     let newKey;
     console.log('saved');
-    if (localStorage.length === 0) {
-      newKey = 0;
-    } else {
-      newKey = parseInt(Object.keys(localStorage)[localStorage.length - 1]) + 1;
-    }
     localStorage.setItem(
-      newKey, [text, img]
+      text, img || 'noPic'
     )
   }
 });

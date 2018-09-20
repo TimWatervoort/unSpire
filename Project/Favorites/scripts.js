@@ -14,10 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   //set initial values for card
   if (localStorage.length > 0) {
-    let text = localStorage.getItem(localStorage.key(itemNo)).split(',')[0];
-    let img = localStorage.getItem(localStorage.key(itemNo)).split(',')[1];
+    let text = Object.keys(localStorage)[itemNo];
+    let img = localStorage.getItem(localStorage.key(itemNo));
     message.innerHTML = text;
-    pic.setAttribute('src', img);
+    if (img === 'noPic') {
+      pic.setAttribute('src', '');
+    } else {
+      pic.setAttribute('src', img);
+    }
   } else {
     message.innerHTML = 'You have not selected any favorites yet!';
   }
@@ -49,12 +53,16 @@ document.addEventListener('DOMContentLoaded', function() {
   //set functionality for next button
   function goNext() {
     itemNo++;
-    if (!localStorage.getItem(localStorage.key(itemNo))){
+    if (!localStorage.getItem(localStorage.key(itemNo))) {
       itemNo = 0;
     }
-    text = localStorage.getItem(localStorage.key(itemNo)).split(',')[0];
-    img = localStorage.getItem(localStorage.key(itemNo)).split(',')[1];
-    pic.setAttribute('src', img);
+    text = Object.keys(localStorage)[itemNo];
+    img = localStorage.getItem(localStorage.key(itemNo));
+    if (img === 'noPic') {
+      pic.setAttribute('src', '');
+    } else {
+      pic.setAttribute('src', img);
+    }
     message.innerHTML = text;
   }
 
@@ -64,12 +72,16 @@ document.addEventListener('DOMContentLoaded', function() {
   //set functionality for back button
   function goBack() {
     itemNo--;
-    if (!localStorage.getItem(localStorage.key(itemNo))){
-      itemNo = localStorage.length-1;
+    if (!localStorage.getItem(localStorage.key(itemNo))) {
+      itemNo = localStorage.length - 1;
     }
-    text = localStorage.getItem(localStorage.key(itemNo)).split(',')[0];
-    img = localStorage.getItem(localStorage.key(itemNo)).split(',')[1];
-    pic.setAttribute('src', img);
+    text = Object.keys(localStorage)[itemNo];
+    img = localStorage.getItem(localStorage.key(itemNo));
+    if (img === 'noPic') {
+      pic.setAttribute('src', '');
+    } else {
+      pic.setAttribute('src', img);
+    }
     message.innerText = text;
   }
 
